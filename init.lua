@@ -1,0 +1,5 @@
+require("bryant.core.keymaps")
+require("bryant.core.options")
+require("bryant.plugins-setup")
+require("bryant.plugins.nvim-tree")
+require("bryant.core.colorscheme")
