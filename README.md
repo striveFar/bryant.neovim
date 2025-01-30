@@ -12,13 +12,64 @@
 git clone https://github.com/striveFar/bryant.neovim.git ~/.config/nvim
 ```
 
-## 核心快捷键
-| 模式 | 快捷键       | 功能描述                 | 备注               |
-|------|--------------|--------------------------|--------------------|
-| i    | `jk`         | 退出插入模式             | 快速返回普通模式   |
-| n    | `<C-b>`      | 切换文件树               | NvimTree插件       |
-| n    | `<leader>hh` | 跨窗口单词跳转           | Hop插件            |
-| n    | `<leader>w`  | 保存文件                 | 安全写入           |
+## 快捷键指南
+
+### 核心操作
+
+### 快速跳转	
+| 快捷键          | 模式 | 功能描述                     | 所属插件  |
+|-----------------|------|----------------------------|----------|
+| `<leader>hh`    | n    | 跨窗口跳转                 | Hop      |
+
+### LSP 操作
+| 快捷键          | 模式 | 功能描述                     | 所属插件  |
+|-----------------|------|----------------------------|----------|
+| `<leader>s`     | n    | 查找符号引用                | LSPSaga  |
+| `<leader>d`     | n    | 跳转到声明                 | LSPSaga  |
+| `<leader>g`     | n    | 预览定义                   | LSPSaga  |
+| `<leader>a`     | n    | code action                | LSPSaga  |
+| `<leader>r`     | n    | 重命名符号                 | LSPSaga  |
+| `<leader>ld`    | n    | 行诊断信息                 | LSPSaga  |
+| `<leader>cd`    | n    | 光标诊断信息               | LSPSaga  |
+| `K`             | n    | 悬浮文档                   | LSPSaga  |
+| `<leader>o`     | n    | 大纲视图                   | LSPSaga  |
+| `<leader>tt`    | n    | 终端切换                   | LSPSaga  |
+| `<leader>i`     | n    | 跳转到实现                 | LSPSaga  |
+| `<leader>ica`   | n    | 查看入参                   | LSPSaga  |
+| `<leader>oca`   | n    | 查看出参                   | LSPSaga  |
+| `<leader>o`     | n    | 大纲视图                   | LSPSaga  |
+| `<leader>tt`    | n    | 内置终端切换               | LSPSaga  |
+
+### Cscope 操作
+| 快捷键          | 模式 | 功能描述                     | 所属插件  |
+|-----------------|------|----------------------------|----------|
+| `<C-\>s`       | n    | 查找符号引用                | Cscope   |
+| `<C-\>g`       | n    | 全局定义                   | Cscope   |
+| `<C-\>c`       | n    | 查找调用                   | Cscope   |
+| `<C-\>d`       | n    | 查找定义                   | Cscope   |
+| `<C-\>t`       | n    | 查找文本                   | Cscope   |
+| `<C-\>e`       | n    | 查找包含                   | Cscope   |
+| `<C-\>f`       | n    | 查找函数                   | Cscope   |
+| `<C-\>i`       | n    | 查找包含文件               | Cscope   |
+
+### 诊断管理
+| 快捷键          | 模式 | 功能描述                     | 所属插件  |
+|-----------------|------|----------------------------|----------|
+| `[d`           | n    | 上一个诊断                 | LSPSaga  |
+| `]d`           | n    | 下一个诊断                 | LSPSaga  |
+| `<leader>ld`    | n    | 行诊断信息                 | LSPSaga  |
+| `<leader>cd`    | n    | 光标诊断信息               | LSPSaga  |
+| `<leader>xx`    | n    | 切换诊断列表                 | Trouble  |
+| `<leader>xw`     | n    | 工作区诊断                  | Trouble  |
+| `<leader>xd`     | n    | 文档诊断                    | Trouble  |
+
+
+### 工具集成
+| 快捷键          | 模式 | 功能描述                     | 所属插件       |
+|-----------------|------|----------------------------|---------------|
+| `<leader>tt`    | n    | 终端切换                   | LSPSaga       |
+| `<leader>xQ`    | n    | 快速修复列表               | Trouble       |
+| `<leader>xL`    | n    | 位置列表                   | Trouble       |
 
 ## 文件树 (NvimTree)
 | 模式 | 快捷键 | 功能描述               | 文件树专用模式 |
@@ -29,6 +80,7 @@ git clone https://github.com/striveFar/bryant.neovim.git ~/.config/nvim
 | n    | gy     | 复制绝对路径           | 到系统剪贴板   |
 | n    | v      | 垂直分屏打开           | 分屏编辑       |
 | n    | u      | 返回上级目录           | 目录导航       |
+| n    | <C-b>  | 打开/关闭文件树        | 文件树         |
 
 ## 插件列表
 | 插件名称             | 功能描述                   | 文档链接                          |
@@ -45,12 +97,16 @@ git clone https://github.com/striveFar/bryant.neovim.git ~/.config/nvim
 ├── lua
 │   └── bryant
 │       ├── core/         # 核心配置
+│       │   ├── autocmds.lua
+│       │   ├── colorscheme.lua
 │       │   ├── keymaps.lua
-│       │   ├── options.lua
-│       │   └── colorscheme.lua
+│       │   └── options.lua
 │       └── plugins/      # 插件配置
-│           ├── nvim-tree.lua
-│           └── ...
+│           ├── lsp/
+│           │   ├── lspconfig.lua
+│           │   ├── mason.lua
+│           │   └── null-ls.lua
+│           └── nvim-cmp.lua
 └── init.lua              # 入口文件
 ```
 
