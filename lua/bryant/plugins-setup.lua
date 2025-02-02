@@ -103,6 +103,14 @@ return require("packer").startup(function(use)
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
 	-- markdown preview
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
@@ -139,7 +147,7 @@ return require("packer").startup(function(use)
 		config = function()
 			require("symbols-outline").setup()
 			vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<CR>")
-		end
+		end,
 	})
 
 	if packer_bootstrap then

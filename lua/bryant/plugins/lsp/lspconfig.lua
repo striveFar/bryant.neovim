@@ -77,7 +77,7 @@ if compile_commands_arg then
 	table.insert(clangd_args, compile_commands_arg)
 	print("[Clangd] Using compile commands:", compile_commands_arg)
 else
-	print("[Clangd] No compile commands found in:", vim.fn.getcwd())
+	-- print("[Clangd] No compile commands found in:", vim.fn.getcwd())
 end
 
 lspconfig["clangd"].setup({
