@@ -152,6 +152,33 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 :source ~/.config/nvim/init.lua
 ```
 
+B:
+Q: nvim 图标乱码？
+
+1. 安装 nerd font 字体: https://www.nerdfonts.com/font-downloads
+```bash
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip \
+&& cd ~/.local/share/fonts \
+&& unzip JetBrainsMono.zip \
+&& rm JetBrainsMono.zip \
+&& fc-cache -fv
+```
+2. 如果是WSL2， 请使用windows terminal 配置
+
+https://learn.microsoft.com/zh-cn/windows/terminal/install
+
+参考视频：
+https://www.bilibili.com/video/BV15T4y1r7TY/?spm_id_from=333.337.search-card.all.click&vd_source=6102e5b6d40bb19fdbdc01d2930deec8
+
+C:
+Q: LSP: pyright 安装失败
+
+![image](https://github.com/user-attachments/assets/ed8a0763-43be-49ba-8210-ce28fe0fb958)
+
+![image](https://github.com/user-attachments/assets/4f71e1b7-da75-4a42-b755-d47534377ff0)
+
+将bin目录放入系统环境变量中
+
 > 个人配置，参考了B站大佬的配置，传送门：[从0带你入门Vim](https://www.bilibili.com/video/BV1zY4y1Z7FR/?vd_source=6102e5b6d40bb19fdbdc01d2930deec8)
 
 欢迎提交 Issue 反馈问题
