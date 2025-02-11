@@ -157,8 +157,8 @@ Q: nvim 图标乱码？
 
 1. 安装 nerd font 字体: https://www.nerdfonts.com/font-downloads
 ```bash
-sudo wget -P /usr/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip \
-&& cd /usr/share/fonts \
+sudo wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip \
+&& cd ~/.local/share/fonts \
 && sudo unzip JetBrainsMono.zip \
 && rm JetBrainsMono.zip \
 && sudo fc-cache -fv
